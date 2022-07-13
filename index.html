@@ -19,6 +19,14 @@
     </form>
 
     <script type="text/javascript">
+        function generate()
+        {
+            let usrFname = document.getElementById("usrFname").value.substring(0, 3);
+            let usrLname = document.getElementById("usrLname").value.substring(0, 3);
+            let password = usrFname + usrLname;
+            document.getElementById("password").value = password;
+        }
+
         function getRandBetween(min, max) 
         {
             return Math.floor(Math.random() * (max - min + 1) ) + min;
