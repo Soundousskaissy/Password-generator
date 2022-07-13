@@ -15,14 +15,16 @@
         <input name="lname" id="lname" type="text"/>
         <label for="password">Wachtwoord</label>
         <input name="password" id="password" type="text"/>
-        <input name="generate" id="generate" type="button"/>
+        <input name="generate" id="generate" type="button" />
+
     </form>
 
     <script type="text/javascript">
         function generate()
         {
-            let usrFname = document.getElementById("usrFname").value.substring(0, 3);
-            let usrLname = document.getElementById("usrLname").value.substring(0, 3);
+            let usrFname = document.getElementById("fname").value.substring(0, 3); 
+            console.log(usrFname);
+            let usrLname = document.getElementById("lname").value.substring(0, 3);
             let password = usrFname + usrLname;
             document.getElementById("password").value = password;
         }
@@ -31,6 +33,8 @@
         {
             return Math.floor(Math.random() * (max - min + 1) ) + min;
         }
+
+        document.getElementById("generate").addEventListener("click", generate()) ;
     </script>
 
 </body>
