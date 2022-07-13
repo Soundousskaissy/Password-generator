@@ -20,7 +20,7 @@
     </form>
 
     <script type="text/javascript">
-        function generate()
+        let generate = function()
         {
             let usrFname = document.getElementById("fname").value.substring(0, 3); 
             console.log(usrFname);
@@ -34,7 +34,7 @@
             return Math.floor(Math.random() * (max - min + 1) ) + min;
         }
 
-        document.getElementById("generate").addEventListener("click", generate()) ;
+        document.getElementById("generate").addEventListener("click", generate) ;
     </script>
 
 </body>
