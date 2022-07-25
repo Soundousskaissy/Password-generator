@@ -2,8 +2,8 @@ let generate = function () {
   let fullName = document.getElementById("flname").value;
   fullName = fullName.trim();
   let nameArray = fullName.split(" ");
-  let usrFname = nameArray[0].substr(0,3);
-  let usrLname = nameArray[nameArray.length - 1].substr(0,3);
+  let usrFname = nameArray[0].substring(0,3);
+  let usrLname = nameArray[nameArray.length - 1].substring(0,3);
   // introduce a new variable that signifies it contains a random number from 1000 to 9999
   // use the random function to assign a value to the new variable
   let randNum = getRandBetween(1000, 9999);
@@ -23,17 +23,17 @@ let generate = function () {
   let password = "not set";
 
   // Introduce a new variable containing special chars to put in the password
-  let specialChars = "@#$!%&*-=+";
+  let specialChars = "@#$!%&*-=+|";
 
   // Introduce two new variables containing a random number between 0 and the length of the string-
   // variable named specialChars
-  let randSpecCharNum1 = getRandBetween(0, specialChars.length);
-  let randSpecCharNum2 = getRandBetween(0, specialChars.length);
+  let randSpecCharNum1 = getRandBetween(0, specialChars.length-1);
+  let randSpecCharNum2 = getRandBetween(0, specialChars.length-1);
 
   // Introduce two new variables signalling they contain a random character
   // assign the value of one random character to the newly created variable.
-  let randChar1 = specialChars.substr(randSpecCharNum1, 1);
-  let randChar2 = specialChars.substr(randSpecCharNum2, 1);
+  let randChar1 = specialChars.substring(randSpecCharNum1, randSpecCharNum1+1);
+  let randChar2 = specialChars.substring(randSpecCharNum2, randSpecCharNum2+1);
 
   // use a switch statement containing 6 cases, one case for each scheme
   switch (randScheme) {
