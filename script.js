@@ -1,6 +1,8 @@
 let generate = function () {
-  let usrFname = document.getElementById("fname").value.substring(0, 3);
-  let usrLname = document.getElementById("lname").value.substring(0, 3);
+  let fullName = document.getElementById("flname").value;
+  let nameArray = fullName.split(" ");
+  let usrFname = nameArray[0].substr(0,3);
+  let usrLname = nameArray[nameArray.length - 1].substr(0,3);
   // introduce a new variable that signifies it contains a random number from 1000 to 9999
   // use the random function to assign a value to the new variable
   let randNum = getRandBetween(1000, 9999);
