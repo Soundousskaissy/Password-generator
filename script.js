@@ -1,5 +1,6 @@
 let generate = function () {
   let fullName = document.getElementById("flname").value;
+  fullName = fullName.trim();
   let nameArray = fullName.split(" ");
   let usrFname = nameArray[0].substr(0,3);
   let usrLname = nameArray[nameArray.length - 1].substr(0,3);
@@ -62,6 +63,8 @@ let generate = function () {
   // and store the result in the variable called password
   // Assign the value of the variable "password" to the value-attribute of the HTML-tag with ID "password"
   document.getElementById("password").value = password;
+  document.getElementById("password").focus();
+  document.getElementById("password").select();
 };
 
 function getRandBetween(min, max) {
@@ -69,3 +72,4 @@ function getRandBetween(min, max) {
 }
 
 document.getElementById("generate").addEventListener("click", generate);
+document.getElementById("flname").addEventListener("keyup", generate);
