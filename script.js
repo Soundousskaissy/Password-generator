@@ -63,8 +63,11 @@ let generate = function () {
   // and store the result in the variable called password
   // Assign the value of the variable "password" to the value-attribute of the HTML-tag with ID "password"
   document.getElementById("password").value = password;
-  document.getElementById("password").focus();
-  document.getElementById("password").select();
+  if(document.getElementById("cpgen").checked)
+  {
+    document.getElementById("password").focus();
+    document.getElementById("password").select();
+  }
 };
 
 function getRandBetween(min, max) {
