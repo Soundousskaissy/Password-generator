@@ -1,9 +1,23 @@
 let generate = function () {
-  let fullName = document.getElementById("flname").value;
+  let fullName, usrFname, usrLname, nameArray, pwFname, pwLname;
+  fullName = document.getElementById("flname").value;
   fullName = fullName.trim();
-  let nameArray = fullName.split(" ");
-  let usrFname = nameArray[0].substring(0,3);
-  let usrLname = nameArray[nameArray.length - 1].substring(0,3);
+  // Detect if the fullName is coming from STB 
+  // When it has the pattern "Gendr I.N.I.T.I.A.L.S. Surname (Firstname)"
+  if(fullName.substring(fullName.length-1, fullName.length) == ")")
+  {
+    // Get the first name from the full name (it's between parentheses):
+    usrFname = fullName.substring(fullName.indexOf("(")+1, fullName.length-1);
+    // remove the first name from the full name (and its parenthesis)
+    
+    fullName = usrFname + " " + fullName.replace(" ("+usrFname+")", '');
+  }
+  nameArray = fullName.split(" ");
+  usrFname = nameArray[0];
+  usrLname = nameArray[nameArray.length - 1];
+
+  pwFname = usrFname.substring(0,3);
+  pwLname = usrLname.substring(0,3);
   // introduce a new variable that signifies it contains a random number from 1000 to 9999
   // use the random function to assign a value to the new variable
   let randNum = getRandBetween(1000, 9999);
@@ -38,22 +52,22 @@ let generate = function () {
   // use a switch statement containing 6 cases, one case for each scheme
   switch (randScheme) {
     case 1: // 1 Fir Num Las
-      password = usrFname + randChar1 + randNum + randChar2 + usrLname;
+      password = pwFname + randChar1 + randNum + randChar2 + pwLname;
       break;
     case 2: // 2 Fir Las Num
-      password = usrFname + randChar1 + usrLname + randChar2 + randNum;
+      password = pwFname + randChar1 + pwLname + randChar2 + randNum;
       break;
     case 3: // 3 Num Fir Las
-      password = randNum + randChar1 + usrFname + randChar2 + usrLname;
+      password = randNum + randChar1 + pwFname + randChar2 + pwLname;
       break;
     case 4: // 4 Num Las Fir
-      password = randNum + randChar1 + usrLname + randChar2 + usrFname;
+      password = randNum + randChar1 + pwLname + randChar2 + pwFname;
       break;
     case 5: // 5 Las Num Fir
-      password = usrLname + randChar1 + randNum + randChar2 + usrFname;
+      password = pwLname + randChar1 + randNum + randChar2 + pwFname;
       break;
     case 6: // 6 Las Fir Num
-      password = usrLname + randChar1 + usrFname + randChar2 + randNum;
+      password = pwLname + randChar1 + pwFname + randChar2 + randNum;
       break;
     default: // cannot compute
     //
