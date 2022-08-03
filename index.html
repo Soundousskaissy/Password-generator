@@ -8,31 +8,48 @@
     <title>RINO•ict pass-gen</title>
   </head>
   <body>
-    <h1>RINO•ict pass-gen</h1>
-    <form action="">
-      <dl>
-        <dt>
-          <label for="cpgen">Quick-Copy-Paste-Select</label>
-        </dt>
-        <dd>
-          <input name="cpgen" id="cpgen" type="checkbox" value="Copy-Paste-Generation" />
-        </dd>
-        <dt>
-          <label for="flname">Naam</label>
-        </dt>
-        <dd>
-          <input name="flname" id="flname" type="text" />
-        </dd>
-        <dt>
-          <label for="password">Wachtwoord</label>
-        </dt>
-        <dd>
-          <input name="password" id="password" type="text" />
-        </dd>
-      </dl>
-      <input name="generate" id="generate" type="button" value="generate" />
+    <form id="container">
+      <fieldset>
+        <h2>
+          Passgen <br />
+          RINO•ict
+        </h2>
+        <dl>
+          <dt>
+            <label for="cpgen">Quick-Copy-Paste-Select</label>
+          </dt>
+          <dd>
+            <input
+              name="cpgen"
+              id="cpgen"
+              type="checkbox"
+              value="Copy-Paste-Generation"
+            />
+          </dd>
+          <dd>
+            <input
+              name="flname"
+              id="flname"
+              type="text"
+              name
+              id
+              placeholder="Name"
+            />
+          </dd>
+          <dd>
+            <input
+              name="password"
+              id="password"
+              type="text"
+              name
+              id
+              placeholder="Password"
+            />
+          </dd>
+        </dl>
+        <input name="generate" id="generate" type="button" value="Generate" />
+      </fieldset>
     </form>
-
     <script src="script.js"></script>
   </body>
 </html>
