@@ -5,49 +5,58 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="styles.css" />
-    <title>RINO•ict pass-gen</title>
+    <title>RINO•ict password gen</title>
   </head>
   <body>
     <form id="container">
       <fieldset>
+        <img src="rinoicon.png" alt="RinoLogo" width="200" height="110">
+         
         <h2>
-          Passgen <br />
+          Password Generator <br />
           RINO•ict
+        
         </h2>
         <dl>
-          <dt>
-            <label for="cpgen">Quick-Copy-Paste-Select</label>
-          </dt>
           <dd>
             <input
-              name="cpgen"
-              id="cpgen"
-              type="checkbox"
-              value="Copy-Paste-Generation"
-            />
-          </dd>
-          <dd>
-            <input
-              name="flname"
+              class="flname"
               id="flname"
               type="text"
               name
               id
               placeholder="Name"
+              required
             />
           </dd>
           <dd>
             <input
-              name="password"
+              class="password"
               id="password"
               type="text"
               name
               id
               placeholder="Password"
+               
             />
           </dd>
         </dl>
-        <input name="generate" id="generate" type="button" value="Generate" />
+
+        <input class="button" id="generate" type="button" value="Generate" />
+ 
+        <dt>
+          <label for="cpgen" >Quick-Copy-Paste-Select</label>
+        
+        </dt>
+        <dd>
+          <input
+            name="cpgen"
+            id="cpgen"
+            type="checkbox"
+            value="Copy-Paste-Generation"
+          />
+        </dd>
+      </dd>
       </fieldset>
     </form>
     <script src="script.js"></script>
